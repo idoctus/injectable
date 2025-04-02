@@ -7,8 +7,8 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  get_it: ">=7.2.0 <8.0.0"
-  meta: ^1.12.0
+  get_it: ^8.0.3
+  meta: ^1.16.0
 
 dev_dependencies:
-  lints: ^4.0.0
+  lints: ^5.1.1

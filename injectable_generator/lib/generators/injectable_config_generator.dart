@@ -174,7 +174,9 @@ class InjectableConfigGenerator extends GeneratorForAnnotation<InjectableInit> {
     );
 
     final output =
-        DartFormatter().format(generatedLib.accept(emitter).toString());
+        DartFormatter(
+          languageVersion: DartFormatter.latestLanguageVersion,
+        ).format(generatedLib.accept(emitter).toString());
 
     if (isMicroPackage) {
       final outputId = buildStep.inputId.changeExtension('.module.dart');

@@ -66,7 +66,7 @@ class DependencyResolver {
     final returnType = executableElement.returnType;
     throwIf(
       returnType.element is! ClassElement,
-      '${returnType.getDisplayString(withNullability: false)} is not a class element',
+      '${returnType.getDisplayString()} is not a class element',
       element: returnType.element,
     );
 
@@ -152,7 +152,7 @@ class DependencyResolver {
 
       throwIf(
         abstractSubtype == null,
-        '[${clazz.name}] is not a subtype of [${abstractType.getDisplayString(withNullability: false)}]',
+        '[${clazz.name}] is not a subtype of [${abstractType.getDisplayString()}]',
         element: clazz,
       );
 
@@ -269,7 +269,7 @@ class DependencyResolver {
       final instanceName = namedAnnotation
               ?.getField('type')
               ?.toTypeValue()
-              ?.getDisplayString(withNullability: false) ??
+              ?.getDisplayString() ??
           namedAnnotation?.getField('name')?.toStringValue();
 
       final resolvedType = param.type is FunctionType
